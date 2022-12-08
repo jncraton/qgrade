@@ -1,14 +1,18 @@
 #!/bin/bash
 
-for f in ./*.c; do
-  gcc "$f"
-  ./a.out
-  echo "$f"
-  read -p "Press any key to resume..." -n1 -s
+for f in *.c; do
+  if [ -f "$f" ]; then
+    gcc "$f"
+    ./a.out
+    echo "$f"
+    read -p "Press any key to resume..." -n1 -s
+  fi
 done
 
 for f in ./*.py; do
-  python3 -m doctest "$f"
-  echo "$f"
-  read -p "Press any key to resume..." -n1 -s
+  if [ -f "$f" ]; then
+    python3 -m doctest "$f"
+    echo "$f"
+    read -p "Press any key to resume..." -n1 -s
+  fi
 done
