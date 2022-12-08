@@ -2,17 +2,19 @@
 
 for f in *.c; do
   if [ -f "$f" ]; then
+    cat "$f"
     gcc "$f"
     ./a.out
-    echo "$f"
-    read -p "Press any key to resume..." -n1 -s
+    read -p "Results above are for $f. Press any key to resume...
+" -n1 -s
   fi
 done
 
 for f in ./*.py; do
   if [ -f "$f" ]; then
+    cat "$f"
     python3 -m doctest "$f"
-    echo "$f"
-    read -p "Press any key to resume..." -n1 -s
+    read -p "Results above are for $f. Press any key to resume...
+" -n1 -s
   fi
 done
