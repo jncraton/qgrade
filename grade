@@ -14,7 +14,7 @@ done
 for f in ./*.py; do
   if [ -f "$f" ]; then
     cat "$f"
-    firejail --private=. --net=none --quiet python3 -m doctest "$f"
+    firejail --private=. --net=none --quiet python3 -m doctest -v "$f"
     read -p "Results above are for $f. Press any key to resume...
 " -n1 -s
   fi
