@@ -1,4 +1,4 @@
 all:
 
 clean:
-	rm -f *.py *.c *.cc *.cpp
+	rm -f a.out *.py *.c *.cc *.cpp
