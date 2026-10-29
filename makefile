@@ -1,4 +1,4 @@
 all:
 
 clean:
-	rm -f a.out *.py *.c *.cc *.cpp
+	rm -rf __pycache__ a.out *.py *.c *.cc *.cpp
